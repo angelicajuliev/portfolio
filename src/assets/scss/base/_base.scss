@@ -1,0 +1,76 @@
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-weight: 400;
+}
+
+html,
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+@mixin font-body {
+  color: $color-common;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: $font-family-regular, Helvetica, Arial, sans-serif;
+}
+body {
+  @include font-body;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-title;
+}
+
+h1 {
+  font-size: $h1-font-size;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: $h2-font-size;
+  font-weight: 600;
+  color: $color-primary;
+  text-align: center;
+}
+
+h3 {
+  font-size: $h3-font-size;
+}
+
+h4 {
+  font-size: $h4-font-size;
+}
+
+h5 {
+  font-size: $h5-font-size;
+}
+
+h6 {
+  font-size: $h6-font-size;
+}
+small {
+  font-size: $small-font-size;
+}
+
+p,
+a {
+  font-size: $p-font-size;
+  font-family: $font-family-regular;
+}
+label {
+  font-size: $label-font-size;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

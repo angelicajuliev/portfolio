@@ -1,26 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Landing name="Angélica Julieth Gómez Sarmiento" />
+  <About />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Landing from "./components/Landing";
+import About from "./components/About";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Landing,
+    About
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+@import './assets/scss/index.scss';
 </style>
