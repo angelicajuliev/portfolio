@@ -1,24 +1,26 @@
 <template>
   <section class="contact-form">
     <div class="card">
-      <img
-        :src="resolve_img_url('contact-girl.png')"
-        alt="decoration"
-        class="decoration"
-      />
       <h2>Contáctame</h2>
       <article class="contact">
-        <div class="item">
-          <img :src="resolve_img_url('logo-linkedin.png')" alt="in" />
-          <p>@angelicajulieth</p>
-        </div>
-        <div class="item">
-          <img :src="resolve_img_url('logo-github.png')" alt="@" />
-          <p>@angelicajuliev</p>
-        </div>
-        <div class="item">
-          <img :src="resolve_img_url('icon-mail.png')" alt="@" />
-          <p>angelica.julieth@hotmail.com</p>
+        <img
+          :src="resolve_img_url('contact-girl.png')"
+          alt="decoration"
+          class="decoration"
+        />
+        <div class="items">
+          <div class="item">
+            <img :src="resolve_img_url('logo-linkedin.png')" alt="in" />
+            <p>@angelicajulieth</p>
+          </div>
+          <div class="item">
+            <img :src="resolve_img_url('logo-github.png')" alt="@" />
+            <p>@angelicajuliev</p>
+          </div>
+          <div class="item">
+            <img :src="resolve_img_url('icon-mail.png')" alt="@" />
+            <p>angelica.julieth@hotmail.com</p>
+          </div>
         </div>
       </article>
     </div>
@@ -61,21 +63,26 @@ export default {
     min-height: 35rem;
     position: relative;
 
-    .decoration {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60%;
-      height: auto;
-      max-height: 31rem;
-      max-width: 32rem;
-    }
-
     .contact {
       align-self: flex-end;
-      width: 45%;
+      width: 100%;
       position: relative;
-      margin-top: 4rem;
+      display: flex;
+      flex-direction: row;
+
+      .decoration {
+        position: relative;
+        width: 60%;
+        height: auto;
+        max-height: 31rem;
+        max-width: 32rem;
+        margin-left: 3rem;
+      }
+      .items {
+        margin-left: -4rem;
+        position: relative;
+        margin-top: 3rem;
+      }
       .item {
         display: flex;
         flex-direction: row;
