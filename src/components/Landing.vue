@@ -4,7 +4,7 @@
     <Avatar />
     <vue-particles color="#f90"></vue-particles>
     <h1>
-      Hola, soy <b>{{ name }}</b>
+      Hi, I'm <b>{{ name }}</b>
     </h1>
     <h2>I am frontend developer</h2>
   </div>
