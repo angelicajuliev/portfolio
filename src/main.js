@@ -1,4 +1,9 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
+import Particles from "particles.vue3";
 
-createApp(App).mount('#app')
+import App from "./App.vue";
+
+const app = createApp(App);
+
+app.use(Particles);
+app.mount("#app");

@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+    title: 'Julieth',
     resolve: {
         img: path.resolve(__dirname, 'src/assets/img/')
     },

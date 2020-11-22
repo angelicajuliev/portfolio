@@ -128,11 +128,11 @@ $color-nails: #0D0221;
 
 .avatar {
   font-size: 7px;
-    padding: 2em 1em 0em;
-    background: white;
-    width: 41em;
-    clip-path: circle(50%);
-    position: relative;
+  padding: 2em 1em 0em;
+  background: white;
+  width: 41em;
+  clip-path: circle(50%);
+  position: relative;
   // background-color: rgba($color: $bg-color, $alpha: 0.3);
 }
 
@@ -143,6 +143,8 @@ $color-nails: #0D0221;
   width: 15em;
   margin: 2em auto 0;
   left: -1em;
+  z-index: 1;
+  animation: head-move 6s ease-in 0s infinite;
   // animation: head-dance 1s linear infinite;
 
   .hair {
@@ -211,9 +213,12 @@ $color-nails: #0D0221;
       z-index: 4;
 
       &:before {
-        content: "❤";
+        content: "\2764";
+        text-decoration: none;
         font-size: 2em;
-        color: $color-clothes;
+        color: inherit;
+        -webkit-text-fill-color: $color-clothes;
+        outline-color: $color-clothes;
         position: absolute;
 
         bottom: -0.3em;
@@ -489,7 +494,7 @@ $color-nails: #0D0221;
             top: -3px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: .6em;
+            font-size: 0.6em;
             font-weight: bold;
           }
         }
@@ -761,11 +766,12 @@ $color-nails: #0D0221;
       transform: rotate(-18deg);
       border-radius: 0 50%;
       &:before {
-        right: -0.4em;
+        right: -0.1em;
       }
       &:after {
         right: -3.9em;
-        transform: rotate(-140deg);
+        animation: arm-right-move 6s ease-in 0s infinite;
+        transform: rotate(-135deg);
       }
     }
 
@@ -884,9 +890,10 @@ $color-nails: #0D0221;
     }
     .hand-right {
       @include hand;
-      top: 0.9em;
-      right: -6.8em;
-      transform: rotate(55deg);
+      animation: hand-right-move 6s ease-in 0s infinite;
+      top: 1.8em;
+      right: -8em;
+      transform: rotate(75deg);
 
       .palm {
         width: 3.1em;
@@ -1052,6 +1059,50 @@ $color-nails: #0D0221;
   100%,
   40% {
     transform: rotateZ(0);
+  }
+}
+
+@keyframes head-move {
+  0% {
+    transform: rotate(0);
+  }
+  20% {
+    transform: rotate(2deg);
+  }
+  30%,
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes arm-right-move {
+  0% {
+    transform: rotate(-135deg);
+  }
+  20% {
+    transform: rotate(-139deg);
+  }
+  30%,
+  100% {
+    transform: rotate(-135deg);
+  }
+}
+
+@keyframes hand-right-move {
+  0% {
+    top: 1.8em;
+    right: -8em;
+    transform: rotate(75deg);
+  }
+  20% {
+    top: 1.5em;
+    right: -7.5em;
+    transform: rotate(58deg);
+  }
+  30%,
+  100% {
+    top: 1.8em;
+    right: -8em;
+    transform: rotate(75deg);
   }
 }
 </style>

@@ -1,5 +1,13 @@
-@import 'variables/color';
-@import 'variables/font';
+@import "variables/color";
+@import "variables/font";
 
-@import 'base/base';
-@import 'base/normalize';
+@import "base/base";
+@import "base/normalize";
+
+@import "mixins/breakpoint";
+
+@include to(tablet-l) {
+  :root {
+    font-size: 12px;
+  }
+}

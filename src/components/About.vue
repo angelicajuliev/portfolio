@@ -1,22 +1,24 @@
 <template>
+  <section class="about-content">
     <h2>Sobre mí</h2>
-  <section class="about">
-    <AboutCard icon="icon-work.png" title="Trabajo">
-      <li>Desarrolladora de software con más de 5 años de experiencia.</li>
-      <li>
-        Mi pasión, el desarrollo frontend que asegure una experiencia de usuario
-        fenomenal.
-      </li>
-    </AboutCard>
-    <AboutCard icon="icon-graduate.png" title="Educación">
-      <li>Ingeniera de sistemas de la Universidad ECCI.</li>
-      <li>Aprendiendo todos los días.</li>
-    </AboutCard>
-    <AboutCard icon="icon-happy.png" title="Pasatiempo">
-      <li>Estar en contacto con la naturaleza.</li>
-      <li>Compartir tiempo con mi familia</li>
-      <li>Leer, bailar y disfrutar cada momento como si fuera el último.</li>
-    </AboutCard>
+    <article class="about">
+      <AboutCard icon="icon-work.png" title="Trabajo">
+        <p>Desarrolladora de software con más de 5 años de experiencia.</p>
+        <p>
+          Mi pasión, el desarrollo frontend que asegure una experiencia de
+          usuario fenomenal.
+        </p>
+      </AboutCard>
+      <AboutCard icon="icon-graduate.png" title="Educación">
+        <p>Ingeniera de sistemas de la Universidad ECCI.</p>
+        <p>Aprendiendo todos los días.</p>
+      </AboutCard>
+      <AboutCard icon="icon-happy.png" title="Pasatiempo">
+        <p>Estar en contacto con la naturaleza.</p>
+        <p>Compartir tiempo con mi familia</p>
+        <p>Leer, bailar y disfrutar cada momento como si fuera el último.</p>
+      </AboutCard>
+    </article>
   </section>
 </template>
 
@@ -31,15 +33,23 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "../assets/scss/mixins/breakpoint";
+.about-content {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
 .about {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
-
-
-  li {
-      margin-bottom: 1.5rem;
+  align-items: stretch;
+  margin: 3.5rem 1rem 1rem;
+}
+@include to(tablet-l) {
+  .about {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
   }
 }
 </style>
