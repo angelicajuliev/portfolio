@@ -1,12 +1,15 @@
 <template>
   <div class="landing">
     <Particles id="tsparticles" :options="config" />
-    <Avatar />
-    <vue-particles color="#f90"></vue-particles>
-    <h1>
-      Hi, I'm <b>{{ name }}</b>
-    </h1>
-    <h2>I am frontend developer</h2>
+    <div class="content">
+      <div class="text">
+        <h1>
+          Hola, soy <b>{{ name }}</b>
+        </h1>
+        <h2>Soy desarrolladora frontend</h2>
+      </div>
+      <Avatar />
+    </div>
   </div>
 </template>
 
@@ -30,7 +33,6 @@ export default {
 <style scoped lang="scss">
 .landing {
   padding: 4rem 1rem 5rem;
-  text-align: center;
   background-size: cover;
   background-position: bottom center;
   background-image: url("../assets/img/landing-bg.png");
@@ -43,6 +45,14 @@ export default {
     clip-path: polygon(100% 0, 100% 80%, 50% 100%, 0 80%, 0 0);
   }
 
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1024px;
+  }
+
   h1 {
     margin-bottom: 0rem;
   }
@@ -50,6 +60,7 @@ export default {
     margin-top: 0.3rem;
     color: #11054e;
     font-weight: normal;
+    text-align: left;
   }
   .avatar {
     margin: 0 auto;

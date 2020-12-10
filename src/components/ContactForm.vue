@@ -4,23 +4,23 @@
       <h2>Contáctame</h2>
       <article class="contact">
         <img
-          :src="resolve_img_url('contact-girl.png')"
+          :src="resolve_img_url('contact-girl2.png')"
           alt="decoration"
           class="decoration"
         />
         <div class="items">
-          <div class="item">
+          <a class="item" href="https://www.linkedin.com/in/angelicajulieth/?locale=en_US" >
             <img :src="resolve_img_url('logo-linkedin.png')" alt="in" />
             <p>@angelicajulieth</p>
-          </div>
-          <div class="item">
+          </a>
+          <a class="item" href="https://github.com/angelicajuliev">
             <img :src="resolve_img_url('logo-github.png')" alt="@" />
             <p>@angelicajuliev</p>
-          </div>
-          <div class="item">
+          </a>
+          <a class="item">
             <img :src="resolve_img_url('icon-mail.png')" alt="@" />
             <p>angelica.julieth@hotmail.com</p>
-          </div>
+          </a>
         </div>
       </article>
     </div>
@@ -60,28 +60,29 @@ export default {
     flex-direction: column;
     align-items: center;
 
-    min-height: 35rem;
+    min-height: 30rem;
     position: relative;
 
     .contact {
-      align-self: flex-end;
       width: 100%;
       position: relative;
-      display: flex;
-      flex-direction: row;
+          top: -3rem;
+    right: -2rem;
 
       .decoration {
         position: relative;
-        width: 60%;
+        width: 70%;
         height: auto;
         max-height: 31rem;
-        max-width: 32rem;
+        max-width: 42rem;
         margin-left: 3rem;
       }
       .items {
-        margin-left: -4rem;
-        position: relative;
-        margin-top: 3rem;
+        height: fit-content;
+        position: absolute;
+        bottom: 0.5rem;
+        z-index: 99;
+        left: 25%;
       }
       .item {
         display: flex;

@@ -3,10 +3,10 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
-  <Landing name="Angélica Julieth Gómez Sarmiento" />
+  <Landing name="Angélica Julieth Gómez S." />
   <div class="content">
     <About />
-    <Skill />
+    <Knowledge />
     <Experience />
   </div>
   <ContactForm />
@@ -15,18 +15,19 @@
 <script>
 import Landing from "./components/Landing";
 import About from "./components/About";
-import Skill from "./components/Skill";
+// import Skill from "./components/Skill";
 import Experience from "./components/Experience";
 import ContactForm from "./components/ContactForm";
+import Knowledge from "./components/Knowledge";
 
 export default {
   name: "App",
   components: {
     Landing,
     About,
-    Skill,
     Experience,
-    ContactForm
+    ContactForm,
+    Knowledge
   },
 };
 </script>
