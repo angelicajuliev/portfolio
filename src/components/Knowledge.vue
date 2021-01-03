@@ -59,5 +59,17 @@ export default {
       padding: 2rem 1rem 1rem 4rem;
     }
   }
+
+  @include to(tablet-l) {
+    .content {
+      justify-content: center;
+      .decoration {
+        display: none;
+      }
+      &__carousel {
+        max-width: 70%;
+      }
+    }
+  }
 }
 </style>

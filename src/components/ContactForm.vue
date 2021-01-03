@@ -103,14 +103,21 @@ export default {
   }
   @include to(tablet-l) {
     min-height: none;
+    padding: 2rem 4rem 1rem;
     .decoration {
       display: none;
     }
     .card {
+      min-height: 21rem;
       padding: 0 2rem;
       .contact {
         width: 100%;
       }
+    }
+    .items {
+      position: relative;
+      left: 0 !important;
+      top: 4rem;
     }
   }
 }

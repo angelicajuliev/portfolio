@@ -37,8 +37,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "../assets/scss/mixins/breakpoint";
 .landing {
-  padding: 4rem 1rem 5rem;
+  padding: 4rem 1rem 0;
   background-size: cover;
   background-position: bottom center;
   background-image: url("../assets/img/landing-bg.png");
@@ -70,6 +71,14 @@ export default {
   }
   .avatar {
     margin: 0 auto;
+  }
+
+  @include to(tablet-l) {
+   .content {
+     padding: 4rem 2.5rem 5rem;
+     flex-direction: column;
+
+   } 
   }
 }
 </style>
