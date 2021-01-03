@@ -17,63 +17,64 @@
       class="btn-arrow btn-next"
       @click="onNext"
     />
-    <ul class="dotstyle dotstyle-scaleup">
-      <li
-        v-for="(item, index) in slides"
-        :key="index"
-        :class="{ selected: currentSlide === index }"
-      >
-        <a :tabindex="index" @click="onClickSlide(i)"> - </a>
-      </li>
-    </ul>
   </section>
+  <ul class="dotstyle dotstyle-scaleup">
+    <li
+      v-for="(item, index) in slides"
+      :key="index"
+      :class="{ selected: currentSlide === index }"
+    >
+      <a :tabindex="index" @click="currentSlide = index"> - </a>
+    </li>
+  </ul>
 </template>
 
 <script>
 export default {
   name: "carousel",
   props: { slides: Number },
-  data: () => ({ currentSlide: 1 }),
+  data: () => ({ currentSlide: 0 }),
   methods: {
     resolve_img_url: function (path) {
-      let images = require.context("../assets/img/", false, /\.png$|\.jpg$|\.svg$/);
+      let images = require.context(
+        "../assets/img/",
+        false,
+        /\.png$|\.jpg$|\.svg$/
+      );
       return images("./" + path);
     },
     onPrev: function () {
       this.currentSlide -= 1;
+      if (this.currentSlide < 0) {
+        this.currentSlide = this.slides - 1;
+      }
     },
-    onNext: () => {
+    onNext: function () {
       this.currentSlide += 1;
-    },
-    onClickSlide: () => {
-      this.currentSlide = 1;
-    },
+      if (this.currentSlide > this.slides - 1) {
+        this.currentSlide = 0;
+      }
+    }
   },
 };
 </script>
 
 <style lang="scss" scoped>
-@mixin translate-steps($width-step: 33rem) {
-  $first-step: 0;
-  $second-step: -1 * $width-step;
-  $third-step: -2 * $width-step;
-  $fourth-step: -3 * $width-step;
-  $fifth-step: -4 * $width-step;
+@mixin translate-steps($width-step: 21.5rem) {
+  @for $i from 0 through 10 {
+    &.step#{$i} {
+      transform: translateX($i * -1 * $width-step);
+    }
+  }
+}
 
-  &.step1 {
-    transform: translateX($first-step);
+@keyframes ripple {
+  90% {
+    transform: scale(4);
+    opacity: 0;
   }
-  &.step2 {
-    transform: translateX($second-step);
-  }
-  &.step3 {
-    transform: translateX($third-step);
-  }
-  &.step4 {
-    transform: translateX($fourth-step);
-  }
-  &.step5 {
-    transform: translateX($fifth-step);
+  100% {
+    display: none;
   }
 }
 
@@ -83,14 +84,14 @@ export default {
   justify-content: space-between;
   margin: 0 auto;
 
-  @include translate-steps(22rem);
+  @include translate-steps;
 
-    & + ul {
-      position: absolute;
-      top: 30rem;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+  & + ul {
+    position: absolute;
+    top: 30rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .overflow-hidden {
@@ -100,25 +101,27 @@ export default {
 .btn-arrow {
   width: 3rem;
   height: auto;
-  // position: absolute;
+  position: relative;
   z-index: 3;
-  top: 15rem;
+  top: 0;
+  right: 0;
 
   &.btn-next {
-    right: 0.5rem;
+    right: 1rem;
+    position: absolute;
+    top: 6rem;
   }
-}
 
-.btn-extra {
-  position: relative;
-  bottom: 7rem;
-}
-
-.buttons.right {
-  text-align: right;
-  .btn {
-    left: auto;
-    right: 8%;
+  span.ripple {
+    position: absolute; /* The absolute position we mentioned earlier */
+    border-radius: 50%;
+    transform: scale(0) translate(-50%, -50%);
+    animation: ripple 600ms linear;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 3rem;
+    height: 3rem;
+    top: 50%;
+    left: 50%;
   }
 }
 
@@ -127,6 +130,7 @@ export default {
   position: relative;
   z-index: 3;
   max-width: 100vw;
+  width: 25rem;
   overflow-x: hidden;
   display: flex;
   flex-direction: row;
@@ -169,7 +173,7 @@ ul.dotstyle {
   top: 0;
   left: 0;
   width: 1.5rem;
-  height: 0.5rem;
+  height: 1.5rem;
   outline: none;
   border-radius: 50%;
   background-color: #c7c6c6;

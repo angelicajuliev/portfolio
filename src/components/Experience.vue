@@ -31,7 +31,7 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/scss/mixins/breakpoint";
 .experience {
-  margin: 4rem 2rem 5rem;
+  margin: 7rem 2rem;
   .details {
     text-align: center;
     width: 45rem;

@@ -9,7 +9,10 @@
           class="decoration"
         />
         <div class="items">
-          <a class="item" href="https://www.linkedin.com/in/angelicajulieth/?locale=en_US" >
+          <a
+            class="item"
+            href="https://www.linkedin.com/in/angelicajulieth/?locale=en_US"
+          >
             <img :src="resolve_img_url('logo-linkedin.png')" alt="in" />
             <p>@angelicajulieth</p>
           </a>
@@ -66,8 +69,8 @@ export default {
     .contact {
       width: 100%;
       position: relative;
-          top: -3rem;
-    right: -2rem;
+      top: -3rem;
+      right: -2rem;
 
       .decoration {
         position: relative;
@@ -80,7 +83,7 @@ export default {
       .items {
         height: fit-content;
         position: absolute;
-        bottom: 0.5rem;
+        bottom: 0rem;
         z-index: 99;
         left: 25%;
       }

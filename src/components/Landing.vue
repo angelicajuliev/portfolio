@@ -8,7 +8,13 @@
         </h1>
         <h2>Soy desarrolladora frontend</h2>
       </div>
-      <Avatar />
+      <a
+        href="https://github.com/angelicajuliev/avatar-css/tree/master"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Avatar />
+      </a>
     </div>
   </div>
 </template>

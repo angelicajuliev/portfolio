@@ -11,8 +11,7 @@
     "core-js": "^3.6.5",
     "particles.vue3": "^1.1.11",
     "sass": "^1.27.0",
-    "vue": "^3.0.0",
-    "vue3-carousel": "^0.1.5"
+    "vue": "^3.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
