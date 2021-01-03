@@ -2,6 +2,7 @@
   <transition name="front">
     <div class="card" v-if="!showDetails" @click="showDetails = !showDetails">
       <div class="front">
+        <Progress radius="60" :progress="progress" stroke="4" />
         <img class="logo" :src="resolve_img_url(icon)" :alt="title" />
         <div class="progress" :style="{ width: knowledge }">
           <small>{{ knowledge }} </small>
@@ -24,11 +25,16 @@
 </template>
 
 <script>
+import Progress from "./Progress";
 export default {
   name: "SkillCard",
+  components: {
+    Progress
+  },
   data: () => {
     return {
       showDetails: false,
+      progress: 20
     };
   },
   props: {

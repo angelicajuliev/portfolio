@@ -43,7 +43,7 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
-  margin: 3.5rem 1rem 1rem;
+  margin: 3.5rem 3rem 1rem 1rem;
 }
 @include to(tablet-l) {
   .about {
